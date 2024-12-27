@@ -58,7 +58,8 @@ function showItemsInCart() {
 }
 
 function calc() {
-  if (form.product.value) {
+  debugger;
+  if (parseInt(form.product.value) > 0) {
     addToCart();
   }
 
