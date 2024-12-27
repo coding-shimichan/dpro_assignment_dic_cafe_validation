@@ -6,7 +6,7 @@ function addToCart() {
     price: parseInt(form.product.value),
     quantity: parseInt(form.quantity.value),
   });
-  window.alert(itemsInCartMessage());
+
   form.reset();
 }
 
@@ -38,11 +38,20 @@ function shippingFee(itemTotal) {
   }
 }
 
-function itemsInCartMessage() {
-  return itemLines() + "\n" + `小計: ${itemTotal()}円`;
+function showItemsInCart() {
+  addToCart();
+  window.alert(_itemsInCartMessage());
+
+  function _itemsInCartMessage() {
+    return itemLines() + "\n" + `小計: ${itemTotal()}円`;
+  }
 }
 
 function calc() {
+  if (form.product.value) {
+    addToCart();
+  }
+
   const _itemLines = itemLines();
   const _itemTotal = itemTotal();
   const _shippingFee = shippingFee(_itemTotal);
