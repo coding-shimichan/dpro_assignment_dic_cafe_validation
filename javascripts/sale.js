@@ -1,23 +1,23 @@
 const form = document.querySelector("form");
-const products = [];
+const purchases = [];
 
 function addProduct() {
-  products.push({
+  purchases.push({
     price: parseInt(form.product.value),
     quantity: parseInt(form.quantity.value),
   });
-  console.info("Current products", products);
+  console.info("Current products", purchases);
   form.reset();
 }
 
 function calc() {
-  const message = products.reduce((result, currentProduct) => {
+  const message = purchases.reduce((result, currentProduct) => {
     const messageLine = `${currentProduct.price}円： ${currentProduct.quantity}点\n`;
     result += messageLine;
     return result;
   }, "");
 
-  const total = products.reduce((result, currentProduct) => {
+  const total = purchases.reduce((result, currentProduct) => {
     const subtotal = currentProduct.price * currentProduct.quantity;
     result += subtotal;
     return result;
