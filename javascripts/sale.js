@@ -2,10 +2,20 @@ const form = document.querySelector("form");
 const purchases = [];
 
 function addToCart() {
-  purchases.push({
+  const addingItem = {
     price: parseInt(form.product.value),
     quantity: parseInt(form.quantity.value),
-  });
+  };
+
+  const existingItem = purchases.find(
+    (itemInCart) => itemInCart.price === addingItem.price
+  );
+
+  if (existingItem) {
+    existingItem.quantity += addingItem.quantity;
+  } else {
+    purchases.push(addingItem);
+  }
 
   form.reset();
 }
