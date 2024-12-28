@@ -78,6 +78,7 @@
 
 html {
   height: 100%;
+  font-family: "Hiragino Kaku Gothic ProN", Arial, Helvetica, sans-serif;
 }
 body {
   position: relative;
