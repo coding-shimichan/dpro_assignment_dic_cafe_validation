@@ -43,10 +43,13 @@
 }
 
 .footer {
-  color: #fff;
-  background-color: #251e19;
-  height: 75px;
+  width: 100%;
+  background: #251e19;
+  position: absolute;
+  bottom: -75px;
   padding-bottom: 10px;
+  color: #fff;
+  height: 75px;
 }
 
 .footer_nav {
