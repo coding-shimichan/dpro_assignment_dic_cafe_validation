@@ -1,9 +1,28 @@
+const products = {
+  1: {
+    name: "Original Brend 200g",
+    price: 500,
+  },
+  2: {
+    name: "Original Blend 500g",
+    price: 900,
+  },
+  3: {
+    name: "Special Blend 200g",
+    price: 700,
+  },
+  4: {
+    name: "Special Blend 500g",
+    price: 1200,
+  },
+};
 const form = document.querySelector("form");
 const purchases = [];
 
 function addToCart() {
   const addingItem = {
-    price: parseInt(form.product.value),
+    name: products[form.product.value].name,
+    price: parseInt(products[form.product.value].price),
     quantity: parseInt(form.quantity.value),
   };
 
@@ -30,7 +49,7 @@ function itemTotal() {
 
 function itemLines() {
   return purchases.reduce((result, currentProduct) => {
-    const messageLine = `${currentProduct.price}円: ${currentProduct.quantity}点\n`;
+    const messageLine = `${currentProduct.name} ${currentProduct.price}円: ${currentProduct.quantity}点\n`;
     result += messageLine;
     return result;
   }, "");
@@ -58,7 +77,6 @@ function showItemsInCart() {
 }
 
 function calc() {
-  debugger;
   if (parseInt(form.product.value) > 0) {
     addToCart();
   }
