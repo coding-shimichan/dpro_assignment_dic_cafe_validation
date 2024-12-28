@@ -1,18 +1,18 @@
 const products = {
   1: {
-    name: "Original Brend 200g",
+    name: "オリジナルブレンド 200g",
     price: 500,
   },
   2: {
-    name: "Original Blend 500g",
+    name: "オリジナルブレンド 500g",
     price: 900,
   },
   3: {
-    name: "Special Blend 200g",
+    name: "スペシャルブレンド 200g",
     price: 700,
   },
   4: {
-    name: "Special Blend 500g",
+    name: "スペシャルブレンド 500g",
     price: 1200,
   },
 };

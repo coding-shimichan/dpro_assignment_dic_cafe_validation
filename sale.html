@@ -10,6 +10,25 @@
     />
   </head>
   <body>
+    <header id="top" class="header_nav">
+      <nav class="header_nav">
+        <a href="index.html" class="logo"
+          ><img src="images/sample_logo_k.png"
+        /></a>
+        <ul class="global_nav">
+          <a href="index.html" class="global_nav_item">
+            <li>Home</li>
+          </a>
+          <a href="#" class="global_nav_item">
+            <li>Menu</li>
+          </a>
+          <a href="contact.html" class="global_nav_item">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </nav>
+    </header>
+    <div class="section_inner"></div>
     <section class="section_inner">
       <div class="section_title">
         <h1>コーヒー豆販売</h1>
@@ -23,28 +42,28 @@
       <ul class="menu_list coffee_menu">
         <li class="coffee_menu_list_item">
           <div class="coffee_menu_content">
-            <h2 class="menu_item_title">オリジナルブレンド200g</h2>
+            <h2 class="coffee_menu_item_title">オリジナルブレンド200g</h2>
             <p class="coffee_menu_price">500円</p>
           </div>
           <img src="images/sample_cafe1.jpg" class="coffee_menu_image" />
         </li>
         <li class="coffee_menu_list_item">
           <div class="coffee_menu_content">
-            <h2 class="menu_item_title">オリジナルブレンド500g</h2>
+            <h2 class="coffee_menu_item_title">オリジナルブレンド500g</h2>
             <p class="coffee_menu_price">900円</p>
           </div>
           <img src="images/sample_cafe1.jpg" class="coffee_menu_image" />
         </li>
         <li class="coffee_menu_list_item">
           <div class="coffee_menu_content">
-            <h2 class="menu_item_title">スペシャルブレンド200g</h2>
+            <h2 class="coffee_menu_item_title">スペシャルブレンド200g</h2>
             <p class="coffee_menu_price">700円</p>
           </div>
           <img src="images/sample_cafe3.jpg" class="coffee_menu_image" />
         </li>
         <li class="coffee_menu_list_item">
           <div class="coffee_menu_content">
-            <h2 class="menu_item_title">スペシャルブレンド500g</h2>
+            <h2 class="coffee_menu_item_title">スペシャルブレンド500g</h2>
             <p class="coffee_menu_price">1200円</p>
           </div>
           <img src="images/sample_cafe3.jpg" class="coffee_menu_image" />
@@ -83,6 +102,29 @@
         <input type="button" class="btn" value="合計金額" onclick="calc()" />
       </form>
     </section>
+    <footer class="footer">
+      <nav class="footer_nav">
+        <div class="footer_nav_line">
+          <ul>
+            <a href="index.html" class="footer_nav_item">
+              <li>Home</li>
+            </a>
+            <a href="#" class="footer_nav_item">
+              <li>Menu</li>
+            </a>
+            <a href="contact.html" class="footer_nav_item">
+              <li>Contact</li>
+            </a>
+          </ul>
+          <a href="index.html" class="footer_nav_item">
+            <img src="images/sample_logo_w.png" class="footer_logo" />
+          </a>
+        </div>
+        <span class="footer_copyright_text"
+          >&copy; DIVE INTO CODE Corp. All RIGHTS RESERVED.</span
+        >
+      </nav>
+    </footer>
     <script type="text/javascript" src="javascripts/sale.js"></script>
   </body>
 </html>
