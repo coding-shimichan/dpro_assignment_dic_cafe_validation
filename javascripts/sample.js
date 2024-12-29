@@ -51,4 +51,30 @@ function onLoad() {
   showNumber(1);
 }
 
-onLoad();
+function addOnclick() {
+  const button = document.getElementById("btn");
+  const parent = document.getElementById("parent");
+  const link = document.getElementById("link");
+
+  button.addEventListener("click", function (e) {
+    console.log("buttonがクリックされました");
+    e.stopImmediatePropagation();
+  });
+  button.addEventListener("click", function (e) {
+    window.alert("buttonがクリックされました");
+  });
+  parent.addEventListener("click", function (e) {
+    console.log("parentがクリックされました");
+  });
+  link.addEventListener("click", function (e) {
+    const confirmationResult = window.confirm(
+      "Are you sure you want to visit the website?"
+    );
+    if (confirmationResult === false) {
+      e.preventDefault();
+    }
+  });
+}
+
+// onLoad();
+addOnclick();
