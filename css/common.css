@@ -21,6 +21,7 @@ body {
   /* background: rgba(0, 0, 0, 0.6); */
   display: flex;
   flex-wrap: nowrap;
+  flex-direction: row-reverse;
   justify-content: space-between;
   align-items: stretch;
   position: fixed;

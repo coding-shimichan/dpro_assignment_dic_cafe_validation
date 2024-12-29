@@ -69,18 +69,8 @@ function addOnclick() {
   });
 }
 
-function onLoad() {
-  $(addOnclick);
-  $("h1").append("を始めます");
-  $("h1").css("background", "orange");
-  $("div").append("<p>jQuery</p>");
-
-  $("#btn").html("<p>Click me</p>");
+$(function () {
   $("#btn").on("click", function () {
-    $(this).text("Clicked!");
+    $("#message").toggle("500", "linear");
   });
-
-  $("a").text("Google");
-}
-
-onLoad();
+});
