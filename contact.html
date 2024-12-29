@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>DIC Cafe</title>
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/contact.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="sub_header">
+      <nav class="header_nav">
+        <a href="index.html" class="logo"
+          ><img src="images/sample_logo_k.png"
+        /></a>
+        <ul class="global_nav">
+          <a href="index.html" class="global_nav_item">
+            <li>Home</li>
+          </a>
+          <a href="#" class="global_nav_item">
+            <li>Menu</li>
+          </a>
+          <a href="contact.html" class="global_nav_item">
+            <li>Contact</li>
+          </a>
+        </ul>
+      </nav>
+    </header>
+    <article class="section_inner">
+      <div class="section_title">
+        <h1>Contact</h1>
+        <p>お問い合わせ</p>
+      </div>
+      <form action="#" method="post">
+        <table class="contact">
+          <tbody>
+            <tr class="contact_line">
+              <td class="contact_label"><label for="name">お名前</label></td>
+              <td class="contact_input">
+                <input type="text" name="name" id="name" />
+              </td>
+            </tr>
+            <tr class="contact_line">
+              <td class="contact_label">
+                <label for="phonenumber">連絡先</label>
+              </td>
+              <td class="contact_input">
+                <input type="tel" name="phonenumber" id="phonenumber" />
+              </td>
+            </tr>
+            <tr class="contact_line">
+              <td class="contact_label">
+                <label for="region">お住まいの地域</label>
+              </td>
+              <td class="contact_input">
+                <select name="region" id="region">
+                  <option value="0">選択してください</option>
+                  <option value="1">北海道</option>
+                  <option value="2">東北</option>
+                  <option value="3">関東</option>
+                  <option value="4">中部</option>
+                  <option value="5">近畿</option>
+                  <option value="6">中国・四国</option>
+                  <option value="7">九州</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="contact_content">
+              <td class="contact_label"><label for="content">内容</label></td>
+              <td class="contact_input">
+                <textarea name="content" id="content"></textarea>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="contact_button_area">
+          <button type="reset" class="contact_button reset_button">
+            リセット
+          </button>
+          <button type="submit" class="contact_button submit_button">
+            送信する
+          </button>
+        </div>
+      </form>
+    </article>
+    <footer class="footer">
+      <nav>
+        <ul>
+          <a href="index.html">
+            <li>Home</li>
+          </a>
+          <a href="#">
+            <li>Menu</li>
+          </a>
+          <a href="contact.html">
+            <li>Contact</li>
+          </a>
+        </ul>
+        <a href="index.html">
+          <img src="images/sample_logo_w.png" />
+        </a>
+        <span>&copy; DIVIC Corp. All RIGHTS RESERVED.</span>
+      </nav>
+    </footer>
+  </body>
+</html>
