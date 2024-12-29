@@ -27,44 +27,37 @@ function sleep() {
   }
 }
 
-function onLoad() {
-  console.info("Process start");
-  //   Promise.all([inputNumber(2), inputNumber("hello"), inputNumber(6)])
-  //     .then((result) => {
-  //       console.info("All promises have been resolved!");
-  //     })
-  //     .catch(() => {
-  //       console.error("Something went wrong!");
-  //     })
-  //     .finally(() => {
-  //       console.info("End process");
-  //     });
+// function onLoad() {
+//   console.info("Process start");
+//   Promise.all([inputNumber(2), inputNumber("hello"), inputNumber(6)])
+//     .then((result) => {
+//       console.info("All promises have been resolved!");
+//     })
+//     .catch(() => {
+//       console.error("Something went wrong!");
+//     })
+//     .finally(() => {
+//       console.info("End process");
+//     });
 
-  //   asyncInputNumber(1)
-  //     .then((result) => {
-  //       console.log(`Result: ${result}`);
-  //     })
-  //     .finally(() => {
-  //       console.log("End process");
-  //     });
+//   asyncInputNumber(1)
+//     .then((result) => {
+//       console.log(`Result: ${result}`);
+//     })
+//     .finally(() => {
+//       console.log("End process");
+//     });
 
-  showNumber(1);
-}
+// showNumber(1);
+// }
 
 function addOnclick() {
   const button = document.getElementById("btn");
-  const parent = document.getElementById("parent");
+  const parent = $("#parent");
   const link = document.getElementById("link");
 
-  button.addEventListener("click", function (e) {
-    console.log("buttonがクリックされました");
-    e.stopImmediatePropagation();
-  });
-  button.addEventListener("click", function (e) {
-    window.alert("buttonがクリックされました");
-  });
-  parent.addEventListener("click", function (e) {
-    console.log("parentがクリックされました");
+  $("#btn").click(function (e) {
+    console.log("Buttonがクリックされました");
   });
   link.addEventListener("click", function (e) {
     const confirmationResult = window.confirm(
@@ -76,5 +69,18 @@ function addOnclick() {
   });
 }
 
-// onLoad();
-addOnclick();
+function onLoad() {
+  $(addOnclick);
+  $("h1").append("を始めます");
+  $("h1").css("background", "orange");
+  $("div").append("<p>jQuery</p>");
+
+  $("#btn").html("<p>Click me</p>");
+  $("#btn").on("click", function () {
+    $(this).text("Clicked!");
+  });
+
+  $("a").text("Google");
+}
+
+onLoad();
