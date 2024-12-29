@@ -1,14 +1,24 @@
 function onLoad() {
   const form = document.getElementsByTagName("form")[0];
-  form.onsubmit = showConfirmationMessage;
+  form.addEventListener("submit", showConfirmationMessage);
 
   function showConfirmationMessage(e) {
+    e.preventDefault();
+
     if (emailValidation() === false) {
-      const errorMessage = document.createElement("p");
-      errorMessage.innerText = "メールアドレスが一致しません";
-      errorMessage.classList.add("alert");
-      form.appendChild(errorMessage);
+      const errorMessage = form.appendChild(errorMessageParagraph());
+
+      setTimeout(function () {
+        errorMessage.remove();
+      }, 3000);
       return false;
+
+      function errorMessageParagraph() {
+        const p = document.createElement("p");
+        p.innerText = "メールアドレスが一致しません";
+        p.classList.add("alert");
+        return p;
+      }
     }
 
     const name = form.name.value;
@@ -17,16 +27,16 @@ function onLoad() {
 
     if (confirmationResult === false) {
       window.alert("キャンセルしました");
-      return false;
+      e.preventDefault();
+    } else {
+      form.submit();
     }
 
     function emailValidation() {
-      const email = form.email.value;
-      const email_confirm = form.email_confirm.value;
+      const email = e.currentTarget.email.value;
+      const email_confirm = e.currentTarget.email_confirm.value;
 
-      if (email !== email_confirm) {
-        return false;
-      }
+      return email === email_confirm;
     }
   }
 }
