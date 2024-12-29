@@ -14,8 +14,11 @@
   </head>
   <body>
     <nav class="header_nav">
+      <a href="index.html" class="logo"
+        ><img src="images/sample_logo_k.png"
+      /></a>
       <div>
-        <button class="drop_menu_btn" id="drop_menu_btn">メニュー</button>
+        <button class="drop_menu_btn" id="drop_menu_btn">Contents</button>
         <ul class="drop_menu display_none" id="drop_menu">
           <a href="#" class="drop_menu_item">
             <li>Home</li>
@@ -40,13 +43,13 @@
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">お名前</label></td>
             <td class="contact_input">
-              <input type="text" name="name" id="name" />
+              <input type="text" name="name" id="name" required />
             </td>
           </tr>
           <tr class="contact_line">
             <td class="contact_sign"><label for="email">Eメール</label></td>
             <td class="contact_input">
-              <input type="email" name="email" id="email" />
+              <input type="email" name="email" id="email" required />
             </td>
           </tr>
           <tr class="contact_line">
@@ -54,7 +57,12 @@
               <label for="email_confirm">Eメール(確認)</label>
             </td>
             <td class="contact_input">
-              <input type="email" name="email_confirm" id="email_confirm" />
+              <input
+                type="email"
+                name="email_confirm"
+                id="email_confirm"
+                required
+              />
             </td>
           </tr>
           <tr class="contact_content">
@@ -66,7 +74,9 @@
         </table>
         <div class="contact_btn_area">
           <button type="reset" class="contact_btn reset_btn">リセット</button>
-          <button type="submit" class="contact_btn submit_btn">送信する</button>
+          <button type="submit" class="contact_btn submit_btn" disabled>
+            送信する
+          </button>
         </div>
       </form>
     </section>

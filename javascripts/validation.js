@@ -1,25 +1,12 @@
 function onLoad() {
   const form = document.getElementsByTagName("form")[0];
+  form
+    .querySelector("#email_confirm")
+    .addEventListener("input", emailValidation);
   form.addEventListener("submit", showConfirmationMessage);
 
   function showConfirmationMessage(e) {
     e.preventDefault();
-
-    if (emailValidation() === false) {
-      const errorMessage = form.appendChild(errorMessageParagraph());
-
-      setTimeout(function () {
-        errorMessage.remove();
-      }, 3000);
-      return false;
-
-      function errorMessageParagraph() {
-        const p = document.createElement("p");
-        p.innerText = "メールアドレスが一致しません";
-        p.classList.add("alert");
-        return p;
-      }
-    }
 
     const name = form.name.value;
     const confirmationMessage = `${name}さん、本当に送信しますか？`;
@@ -31,12 +18,30 @@ function onLoad() {
     } else {
       form.submit();
     }
+  }
 
-    function emailValidation() {
-      const email = e.currentTarget.email.value;
-      const email_confirm = e.currentTarget.email_confirm.value;
+  function emailValidation(e) {
+    const form = e.target.closest("form");
+    const email = form.email.value;
+    const email_confirm = form.email_confirm.value;
+    const table = e.target.closest("table");
 
-      return email === email_confirm;
+    if (email !== email_confirm) {
+      if (!table.querySelector(".alert")) {
+        const newRow = table.insertRow(3);
+        newRow.classList.add("alert");
+        const newCell = newRow.insertCell(0);
+        const newText = document.createTextNode("Eメールが一致しません");
+        newCell.appendChild(newText);
+
+        e.target.classList.toggle("invalid_input");
+      }
+
+      form.querySelector(".submit_btn").disabled = true;
+    } else {
+      table.querySelector(".alert")?.remove();
+      e.target.classList.remove("invalid_input");
+      form.querySelector(".submit_btn").disabled = false;
     }
   }
 }
